@@ -1,1 +1,1 @@
-# abstraction
+# ideas
