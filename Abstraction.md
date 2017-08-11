@@ -84,6 +84,12 @@ This is most prominent in math research, often great mathematicians say they dis
 - TODO: find more examples
 
 
+<br>Experiments
+================================================================================
+### First experiment
+- Create game where you need to shoot a cannon at a target. You get target coordinates, and action space is angle and velocity. Abstractions should let you be able to learn a mathematical simulation of the world to shoot at the target.
+
+
 <br>Questions to consider
 ================================================================================
 ##### Two types of abstractions
