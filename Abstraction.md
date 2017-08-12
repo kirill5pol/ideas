@@ -42,9 +42,9 @@ The _base_ state space can be thought of something analogous to the real world. 
 In an example learning problem like a game of Pong, this would be the pixels on the screen. A very bad solution to Pong would be to just do simple RL with pixels as the input to the agent. Luckily the current state of RL research is doing much better.
 
 ### RL state abstractions
-The classic Deep RL agent uses a Neural Network to modify its search space to something more manageble and much more useful than simple pixels. The new search space is an abstraction of the _base_ space, it represents the pixels in terms of learned features from a pre-trained neural network. 
+The classic Deep RL agent uses a Neural Network to modify its search space to something more manageable and much more useful than simple pixels. The new search space is an abstraction of the _base_ space, it represents the pixels in terms of learned features from a pre-trained neural network. 
 
-Fancier versions like [DQN](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf) (add long term memory) or [Imagination Augmented RL](https://arxiv.org/abs/1707.06203) (RL agent picks from a plans with a series of actions vs sigle time-step actions directly) are essentially the same as classic Deep RL with tricks like using prior knowledge or reducing the possible paths to search. The abstraction used here is incredibly valuable because it shrinks the search space from something virtually impossible to calculate into something managable.
+Fancier versions like [DQN](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf) (add long term memory) or [Imagination Augmented RL](https://arxiv.org/abs/1707.06203) (RL agent picks from a plans with a series of actions vs single time-step actions directly) are essentially the same as classic Deep RL with tricks like using prior knowledge or reducing the possible paths to search. The abstraction used here is incredibly valuable because it shrinks the search space from something virtually impossible to calculate into something manageable.
 
 ### Human abstractions
 Unlike these RL agents, humans can have many layers of abstractions. We are able to creatively come up with new (creative) solutions to problems at a much higher level than a simple RL agent. A skilled civil engineer can just look at a building and tell if it will stand or fall. No calculus needed. 
@@ -65,7 +65,7 @@ Using this way of thinking there are two main types of abstractions. Feed forwar
 In order for them to be useful, simulations must be an accurate model of the lower level, and require less computation. Even if the simulation is accurate for only certain cases (like Kirchhoff's ideal circuit laws vs electrical fields) it is still useful as long as you know when you can use it.
 
 - The human brain does this all the time, it makes approximate predictions all the time implicitly in everyday life (overgeneralizing), when our model fails too often we modify it. We use this explicitly too. Arguably the greatest human "invention" is science. This process takes a hypothesis, tries it out in a lower level of abstraction (usually math or real world experiments), if it fits, then we accept the hypothesis, otherwise we reject it.
-- In Machine Learning we can do the same thing. At each level of abstraction we test the simulation using the lower level of abstraction.
+- In Machine Learning we can do the same thing. At each level of abstraction, we test the simulation using the lower level of abstraction.
     - Note: This may be a clean abstraction like mathematics or a dirty one like Kirchhoff's laws.
 
 ### Accelerate creative search
@@ -78,7 +78,7 @@ The reason this happens is because you can consider each simulation abstraction 
 
 When people think of new ideas in high-level complicated topics, they use their intuition (at the highest-level of abstraction) to figure out how something should work. Then they use a lower level of abstraction to show that their intuition is correct.
 
-This is most prominent in math research, often great mathematicians say they discovered some idea because it _felt right_. These dicoveries just would not be possible without that very high level intuitive understanding. The intuition gives you the idea, lower level math proves that idea.
+This is most prominent in math research; often great mathematicians say they discovered some idea because it _felt right_. These discoveries just would not be possible without that very high level intuitive understanding. The intuition gives you the idea, lower level math proves that idea.
   
 - [An example](https://math.byu.edu/~lzhao/ProfMath/ResearchIntuition.pdf)
 - TODO: find more examples
@@ -93,9 +93,9 @@ This is most prominent in math research, often great mathematicians say they dis
 <br>Questions to consider
 ================================================================================
 ##### Two types of abstractions
-- Humans obviously have a neural network getting things like visual features of an image or getting classes. How do you use both the absract simulation module and feature modules together?
+- Humans obviously have a neural network getting things like visual features of an image or getting classes. How do you use both the abstract simulation module and feature modules together?
   - Eg one way to abstract is to create an simpler, approximate model of a lower level (from calculating circuit behaviour using electrical fields vs Kirchhoff's laws). The other is to use a feedforward network to calculate features or classes.
-  - It seems that this would need to be two seperate structures to be useful? 
+  - It seems that this would need to be two separate structures to be useful? 
     1. You take the highest level of abstracted simulation you can 
     2. Put a feedfoward net on top of that (like classical Deep RL)
     3. Search around that high level abstract space
